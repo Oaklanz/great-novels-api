@@ -9,6 +9,9 @@ const { Sequelize } = require('sequelize')
 
 
 
+const Novels = NovelsModel(connection, Sequelize, Authors)
+const Authors = AuthorsModel(connection, Sequelize,)
+const Genres = GenresModel(connection, Sequelize)
 
 
 
