@@ -3,7 +3,7 @@ const express = require('express')
 
 const app = express()
 
-
+app.get('/authors', getAllAuthors)
 
 
 app.listen(1337, () => {
