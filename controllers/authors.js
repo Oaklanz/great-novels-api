@@ -1,0 +1,14 @@
+const { response } = require('express')
+const models = require('../models')
+const getAllAuthors = async (request, response) => {
+  const authors = await models.Authors.findAll({ include: [{ model: models.Novels }] })
+
+  return response.send(authors)
+}
+const getAuthorsById = async (request, response) => { const {id} = request.params const author = await models.Authors.findOne({where: {id}, include: [{ model: models.Novels}]} ) 
+
+return author ? response.send(author) :response.sendStatus(404) }
+
+
+
+model.exports = { getAllAuthors, getAuthorsById }
