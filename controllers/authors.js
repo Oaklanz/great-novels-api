@@ -10,5 +10,4 @@ const getAuthorsById = async (request, response) => { const {id} = request.param
 return author ? response.send(author) :response.sendStatus(404) }
 
 
-
 model.exports = { getAllAuthors, getAuthorsById }
