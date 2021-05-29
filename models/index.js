@@ -6,17 +6,14 @@ const connection = new Sequelize('novels', 'novels', 'Novels123!', { host: 'loca
 
 
 
-
-
-
-
-const Novels = NovelsModel(connection, Sequelize, Authors)
 const Authors = AuthorsModel(connection, Sequelize,)
+const Novels = NovelsModel(connection, Sequelize, Authors)
 const Genres = GenresModel(connection, Sequelize)
 
 
 
-
+Novels.belongsTo(Authors)
+Authors.hasMany(Genres)
 
 
 
